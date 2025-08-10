@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <title>GENEBLADE</title>
+
+  <!-- Performance -->
+  <link rel="preload" href="assets/hero.jpg" as="image">
+  <link rel="preload" href="assets/logo.png" as="image">
+  <link rel="preload" href="assets/ambient.mp3" as="audio">
+
+  <!-- Futuristic Headline (leicht) -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background Stack -->
+  <div class="bg">
+  <img class="bg-image" src="assets/hero.jpg" alt="" decoding="async" />
+  <div class="bg-aurora" aria-hidden="true"></div>
+
+  <canvas id="snowBack" class="snow-layer" aria-hidden="true"></canvas>
+
+  <!-- ✨ Futuristic particles -->
+  <canvas id="fxEnergy" class="fx-layer" aria-hidden="true"></canvas>
+
+  <canvas id="snowFront" class="snow-layer" aria-hidden="true"></canvas>
+</div>
+
+  <!-- Header: Brand + Lang + Audio -->
+  <header class="site-header glass">
+    <div class="brand">
+      <img src="assets/logo.png" alt="" width="28" height="28" />
+      <span>GENEBLADE</span>
+    </div>
+
+    <div class="lang-switch" role="group" aria-label="Sprache">
+      <button class="lang-btn" data-lang="de" aria-pressed="true" title="Deutsch">🇩🇪 DE</button>
+      <button class="lang-btn" data-lang="en" aria-pressed="false" title="English">🇬🇧 EN</button>
+    </div>
+
+    <button id="muteBtn" class="btn-ghost" aria-pressed="false" title="Sound an/aus (M)">🔊</button>
+  </header>
+
+  <!-- Hero -->
+  <main class="hero">
+    <div class="lockup" role="region" aria-label="GENEBLADE Intro">
+      <img src="assets/logo.png" class="logo" alt="GENEBLADE" draggable="false" />
+
+      <div class="glass-box">
+        <p id="t-subtitle">
+          Ein sauberes Sci‑Fi Action‑RPG: 16 Zonen, Bossfights, Holo‑Hub.
+          <br/>Aktiviere das <strong>Core‑Protokoll</strong> – bald.
+        </p>
+      </div>
+
+      <div class="cta">
+        <a href="#about" class="btn" id="t-more">Mehr erfahren</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Info Section -->
+<section id="about" class="about">
+  <h2 id="t-about-title">Was ist GENEBLADE?</h2>
+  <p id="t-about-text">
+    Style-fokussiertes Action-RPG in UE5. Schnelles Movement, klare Progression,
+    Lore-Mentorin LYZRA und ein Holo-Hub mit reinen In-Game-Kosmetiks.
+  </p>
+</section>
+
+<!-- Release Info -->
+<section id="release" class="about">
+  <h2 id="t-release-title">Wann kommt GENEBLADE?</h2>
+  <p id="t-release-text">
+    Noch nicht so lange bis 1&nbsp;Jahr – aber <strong>Soon...</strong>.
+    Wir arbeiten mit Hochdruck an 16 Zonen, schnellem Movement und Bossfights.
+    Die erste spielbare Version lässt dich bald ins Core‑Protokoll eintreten.
+  </p>
+</section>
+
+  <!-- Ambient -->
+  <audio id="ambient" src="assets/ambient.mp3" preload="auto" loop></audio>
+
+  <footer class="mega-footer glass">
+  <div class="footer-inner">
+    <!-- Connect -->
+    <h3 id="t-connect">VERBINDE DICH MIT GENEBLADE</h3>
+    <nav class="social">
+  <a href="https://www.youtube.com/@GENEBLADEHQ" aria-label="YouTube" class="ico yt" title="YouTube" target="_blank" rel="noopener">
+    <!-- youtube -->
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.5a4 4 0 0 0-2.8-2.9C17.9 4 12 4 12 4s-5.9 0-8.2.6A4 4 0 0 0 1 7.5 41 41 0 0 0 1 12a41 41 0 0 0 1 4.5A4 4 0 0 0 3.8 19C6.1 19.5 12 19.5 12 19.5s5.9 0 8.2-.6A4 4 0 0 0 23 16.5 41 41 0 0 0 24 12a41 41 0 0 0-1-4.5ZM10 15V9l6 3-6 3Z"/></svg>
+  </a>
+
+  <a href="https://www.twitch.tv/geneblade_hq" aria-label="Twitch" class="ico tw" title="Twitch" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M4 2h16v12l-4 4h-4l-3 3v-3H6L4 16V2Zm2 2v10h3v2l2-2h5l2-2V4H6Zm8 2h2v6h-2V6Zm-5 0h2v6H9V6Z"/></svg>
+  </a>
+
+  <a href="https://discord.gg/2Mt2mHzyNN" aria-label="Discord" class="ico dc" title="Discord" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M20 5.4a15 15 0 0 0-4-1.3l-.2.4a13 13 0 0 1 3.5 1.1 12 12 0 0 0-4.5-1 16 16 0 0 0-4.6.6c-.3.1-.5.1-.8.2L9 4A15 15 0 0 0 5 5.5C2.7 9 2 12.2 2 15.3c1.3 1.6 3.6 2.1 5.6 2.2l.7-.9c-.9-.3-1.7-.8-2.4-1.4.8.6 1.8 1 2.9 1.2a10 10 0 0 0 5.5 0c1.1-.2 2.1-.6 2.9-1.2-.7.6-1.5 1.1-2.4 1.4l.7.9c2-.1 4.3-.6 5.6-2.2 0-3.2-.7-6.3-3-9.9ZM9.2 13.9c-.8 0-1.5-.8-1.5-1.8s.7-1.8 1.5-1.8 1.5.8 1.5 1.8-.7 1.8-1.5 1.8Zm5.6 0c-.8 0-1.5-.8-1.5-1.8s.7-1.8 1.5-1.8 1.5.8 1.5 1.8-.7 1.8-1.5 1.8Z"/></svg>
+  </a>
+
+  <a href="https://x.com/GenebladeT63730" aria-label="X" class="ico x" title="X" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M3 3h4.6l4.3 6 4.9-6H21l-7.3 8.9L21 21h-4.6l-4.7-6-5.1 6H3l7.5-9L3 3Zm6.9 2H7.9l6.2 7.9L17 10l-2.1-2.7-5-2.3Z"/></svg>
+  </a>
+
+  <a href="https://www.instagram.com/geneblade_hq" aria-label="Instagram" class="ico ig" title="Instagram" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm5 4a6 6 0 1 0 0 12 6 6 0 0 0 0-12Zm0 2.5A3.5 3.5 0 1 1 8.5 12 3.5 3.5 0 0 1 12 8.5Zm5.2-2.7a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6Z"/></svg>
+  </a>
+</nav>
+
+    <!-- Footer Nav -->
+    <nav class="footer-nav">
+      <a href="#" id="t-support">Support</a>
+      <a href="#" id="t-press">Presse</a>
+      <a href="#" id="t-terms">Nutzungsbedingungen</a>
+      <a href="#" id="t-privacy">Datenschutzerklärung</a>
+      <a href="#" id="t-eula">EULA</a>
+      <a href="#" id="t-cookies">Cookie‑Einstellungen</a>
+    </nav>
+
+    <!-- Platforms -->
+    <div class="platforms">
+      <span class="badge">Steam</span>
+      <span class="badge">Epic</span>
+      <span class="badge">PS5</span>
+      <span class="badge">Xbox Series</span>
+      <span class="badge">Switch</span>
+      <span class="badge">Windows</span>
+    </div>
+
+    <!-- Ratings / note -->
+    <ul class="ratings">
+      <li><img src="assets/usk16.png" alt="USK 16" style="height:40px; vertical-align:middle;"></li>
+      <li>Gewalt</li>
+      <li>Nutzerinteraktion</li>
+      <li>Keine Echtgeld-Käufe</li>
+    </ul>
+
+
+    <small class="copyright">
+      © <span id="year"></span> GENEBLADE — Alle Warenzeichen sind Eigentum ihrer jeweiligen Inhaber.
+    </small>
+  </div>
+</footer>
+  <script src="script.js"></script>
+</body>
+</html>
